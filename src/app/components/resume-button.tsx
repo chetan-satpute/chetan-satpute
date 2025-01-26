@@ -1,9 +1,6 @@
 function ResumeButton() {
   return (
-    <a
-      href="https://flowcv.me/chetansatpute/Chetan-Satpute-FlowCV-Resume-20250119-38iagrbu0t.pdf"
-      target="_blank"
-    >
+    <a href="https://raw.githubusercontent.com/chetan-satpute/chetan-satpute/refs/heads/resume/chetan-satpute-resume.pdf" target="_blank">
       <button className="flex cursor-pointer gap-2 rounded-md bg-neutral-900 px-2 py-1 text-neutral-200 shadow-md hover:bg-neutral-800">
         <svg
           xmlns="http://www.w3.org/2000/svg"
