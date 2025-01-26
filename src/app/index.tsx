@@ -1,7 +1,11 @@
+import MainCard from './components/main-card';
+
 function App() {
   return (
-    <div className="from-primary flex h-screen w-screen items-center justify-center bg-linear-to-t to-white">
-      <h1 className="text-2xl font-bold text-neutral-200">Chetan Satpute</h1>
+    <div className="font-primary bg-primary from-primary h-screen w-screen overflow-auto bg-linear-to-t to-white">
+      <div className="m-auto flex h-full max-w-6xl items-center justify-center p-0 md:p-8">
+        <MainCard />
+      </div>
     </div>
   );
 }
