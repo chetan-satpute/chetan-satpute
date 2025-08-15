@@ -8,7 +8,7 @@ I’m a software engineer passionate about building platforms and tools that sim
 - **Frontend:** React, React Native, TypeScript, TailwindCSS  
 - **Backend:** Go, Node.js
 - **Cloud & DevOps:** Google Cloud Platform (GCP), Docker  
-- **Tools & Workflow:** Git, Vim/Neovim  
+- **Tools & Workflow:** Git, Neovim  
 
 ## 📫 Contact
 - LinkedIn: [chetansatpute](https://www.linkedin.com/in/chetansatpute)  
