@@ -12,14 +12,11 @@ function Section(props: PropsWithChildren<SectionProps>) {
   const { id, prompt, className, children } = props;
 
   return (
-    <section
-      id={id}
-      className={cn('border-b border-neutral-800 py-20', className)}
-    >
+    <section id={id} className={cn('py-16', className)}>
       <div className="mx-auto max-w-4xl px-6">
         {prompt && (
-          <p className="mb-6 font-mono text-sm text-neutral-500">
-            <span className="mr-2 text-green-400">➜</span>
+          <p className="mb-6 flex items-center text-sm text-neutral-500">
+            <span className="mr-4 text-sm text-green-400">λ</span>
             {prompt}
           </p>
         )}

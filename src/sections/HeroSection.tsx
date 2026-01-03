@@ -1,4 +1,4 @@
-import { Download } from 'lucide-react';
+import { Download, ExternalLink } from 'lucide-react';
 
 import Section from '#components/Section.tsx';
 
@@ -9,54 +9,37 @@ function HeroSection() {
         Chetan Satpute
       </h1>
 
-      <p className="mb-6 text-sm text-neutral-400">Senior Software Engineer</p>
+      <p className="mb-6 text-sm text-neutral-400 font-semibold">Software Engineer</p>
 
       <div className="mb-8 max-w-2xl leading-relaxed text-neutral-300">
         <p className="mb-4">
-          Building clean, scalable systems with a strong focus on developer
-          experience and readability.
+          Software Engineer passionate about building scalable web and mobile
+          applications, deploying them on the cloud, and continuously exploring
+          ways to improve performance, usability, and developer workflows.
         </p>
-        <p>
-          I enjoy working at the intersection of performance, simplicity, and
-          thoughtful UI.
+
+        <p className="mb-6 text-sm text-neutral-400">
+          React | React Native | TypeScript
         </p>
       </div>
 
-      <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-400">
+      <div className="flex flex-wrap items-center gap-6 text-sm text-neutral-400">
         <a
           href="https://www.linkedin.com/in/chetansatpute"
           target="_blank"
           rel="noreferrer"
-          className="transition-colors hover:text-neutral-200"
+          className="flex items-center gap-2 transition-colors hover:text-blue-400"
         >
-          linkedin
+          linkedin <ExternalLink size={14} />
         </a>
 
         <a
           href="https://github.com/chetan-satpute"
           target="_blank"
           rel="noreferrer"
-          className="transition-colors hover:text-neutral-200"
+          className="flex items-center gap-2 transition-colors hover:text-blue-400"
         >
-          github
-        </a>
-
-        <a
-          href="mailto:chetan.satpute2002@gmail.com"
-          className="transition-colors hover:text-neutral-200"
-        >
-          email
-        </a>
-
-        <a
-          download
-          href="/resume.pdf"
-          target="_blank"
-          className="text-blue-400 transition-colors hover:text-blue-300"
-        >
-          <span className="flex items-center gap-2">
-            resume <Download size={14} />
-          </span>
+          github <ExternalLink size={14} />
         </a>
       </div>
     </Section>

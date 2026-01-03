@@ -1,5 +1,3 @@
-import { Download } from 'lucide-react';
-
 function Header() {
   return (
     <header className="border-b border-neutral-700">
@@ -9,14 +7,10 @@ function Header() {
 
         {/* Right */}
         <a
-          download
-          href="/resume.pdf"
-          target="_blank"
+          href="mailto:chetan.satpute2002@gmail.com"
           className="text-blue-400 transition-colors hover:text-blue-300"
         >
-          <span className="flex items-center gap-2">
-            resume <Download size={14} />
-          </span>
+          chetan.satpute2002@gmail.com
         </a>
       </div>
     </header>
