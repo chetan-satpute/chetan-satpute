@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-ubuntu-mono: 'Ubuntu Mono', monospace;
+}
+
+html,
+body,
+#root {
+  @apply h-screen w-screen;
+}
+
+body {
+  @apply font-ubuntu-mono bg-neutral-900 text-neutral-200;
+}
