@@ -1,9 +1,7 @@
+import HomePage from './pages/HomePage';
+
 function App() {
-  return (
-    <div className="flex h-screen w-screen items-center justify-center">
-      <h1 className="text-xl font-bold">Chetan Satpute</h1>
-    </div>
-  );
+  return <HomePage />;
 }
 
 export default App;
