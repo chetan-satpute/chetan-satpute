@@ -12,8 +12,8 @@ function HomePage() {
       <Header />
       <div className="divide-y divide-neutral-800">
         <HeroSection />
-        <ExperienceSection />
         <ProjectSection />
+        <ExperienceSection />
         <SkillSection />
         <ContactSection />
       </div>

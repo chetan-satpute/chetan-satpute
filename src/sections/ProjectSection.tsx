@@ -1,3 +1,5 @@
+import { ExternalLink } from 'lucide-react';
+
 import Section from '#components/Section.tsx';
 
 const projects = [
@@ -7,13 +9,13 @@ const projects = [
       'An interactive platform to explore and understand algorithms visually. Watch code come alive as you step through each line and see how data structures change in real time.',
     tech: ['React', 'TypeScript', 'Async Generators', 'Redux'],
     link: 'https://canvas.chetansatpute.dev',
-    isLive: false,
+    isLive: true,
   },
 ];
 
 function ProjectSection() {
   return (
-    <Section prompt="cat projects.txt">
+    <Section prompt="ls projects/">
       <div className="space-y-4 text-sm text-neutral-300">
         {projects.map((project) => (
           <a
@@ -44,6 +46,16 @@ function ProjectSection() {
             <div className="mt-2 font-bold text-neutral-500">
               {project.tech.join(' · ')}
             </div>
+
+            {/* Row 4: Action */}
+            {project.isLive && (
+              <div className="mt-2 flex items-center gap-2 text-xs text-blue-400">
+                <span className="underline underline-offset-2 select-text">
+                  {project.link}
+                </span>
+                <ExternalLink size={14} />
+              </div>
+            )}
           </a>
         ))}
       </div>

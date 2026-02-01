@@ -8,7 +8,7 @@ function Header() {
         {/* Right */}
         <a
           href="mailto:chetan.satpute2002@gmail.com"
-          className="text-blue-400 transition-colors hover:text-blue-300"
+          className="text-blue-400 transition-colors select-text hover:text-blue-300"
         >
           chetan.satpute2002@gmail.com
         </a>
