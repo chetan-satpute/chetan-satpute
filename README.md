@@ -1,18 +1,11 @@
-<h1 align="center">Hi 👋, I'm Chetan Satpute</h1>
-<h3 align="center">Software Engineer | Web, Mobile & Cloud</h3>
+## Chetan Satpute
 
-## 🌱 About Me
+###### [Portfolio](https://chetansatpute.dev) • [Frontend Masters](https://frontendmasters.com/u/chetansatpute/) • [LinkedIn](https://www.linkedin.com/in/chetansatpute)
 
-I’m a software engineer passionate about building platforms and tools that simplify complex workflows and make learning interactive. I enjoy exploring frontend development, cloud technologies, and creating applications that solve real problems.
+I enjoy building systems that turn complex workflows into simple, usable tools.
 
-## 💻 Skills
-
-- **Frontend:** React, React Native, TypeScript, TailwindCSS
-- **Backend:** Go, Node.js
-- **Cloud & DevOps:** Google Cloud Platform (GCP), Docker
-- **Tools & Workflow:** Git, Neovim
-
-## 📫 Contact
-
-- LinkedIn: [chetansatpute](https://www.linkedin.com/in/chetansatpute)
-- Website: [chetansatpute.dev](https://chetansatpute.dev)
+#### Recent Work
+- Building production React Native and React applications from scratch
+- Creating developer tooling and automation (CLI tools, Chrome extensions)
+- Designing shared component systems and monorepo setups
+- Working with cloud infrastructure and deployments
