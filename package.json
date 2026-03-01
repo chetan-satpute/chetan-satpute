@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite-react-ssg build",
     "build:codes": "node ./scripts/build-code-blocks.js",
     "check:format": "prettier --check .",
     "check:lint": "eslint .",
@@ -29,6 +29,7 @@
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.4",
     "@vitejs/plugin-react-swc": "^4.2.2",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
@@ -38,7 +39,8 @@
     "prettier-plugin-tailwindcss": "^0.7.2",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
-    "vite": "npm:rolldown-vite@7.2.5"
+    "vite": "npm:rolldown-vite@7.2.5",
+    "vite-react-ssg": "0.9.1-beta.1"
   },
   "imports": {
     "#*": "./src/*"
