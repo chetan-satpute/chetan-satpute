@@ -1,6 +1,6 @@
 ## Chetan Satpute
 
-###### [Portfolio](https://chetansatpute.dev) • [Frontend Masters](https://frontendmasters.com/u/chetansatpute/) • [LinkedIn](https://www.linkedin.com/in/chetansatpute)
+###### [Portfolio](https://chetansatpute.dev) • [Master.dev Profile](https://master.dev/u/chetansatpute/) • [LinkedIn](https://www.linkedin.com/in/chetansatpute)
 
 I enjoy building systems that turn complex workflows into simple, usable tools.
 
