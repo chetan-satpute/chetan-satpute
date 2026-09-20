@@ -2,26 +2,23 @@ import Section from '#components/Section.tsx';
 
 function ContactSection() {
   return (
-    <Section prompt="./contact.sh">
-      <div className="text-sm text-neutral-200">
+    <Section
+      id="contact"
+      title="Contact"
+      description="The best way to reach me."
+    >
+      <p className="text-foreground text-lead max-w-2xl">
         Hey! I'm always happy to hear from you.{' '}
         <a
           href="https://www.linkedin.com/in/chetansatpute"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-400 transition-colors hover:text-blue-300"
+          className="text-accent hover:text-accent-hover decoration-accent/30 hover:decoration-accent/70 underline underline-offset-[7px] transition-colors"
         >
           Connect on LinkedIn
-        </a>{' '}
-        or send me an email at{' '}
-        <a
-          href="mailto:chetan.satpute2002@gmail.com"
-          className="text-blue-400 transition-colors hover:text-blue-300"
-        >
-          chetan.satpute2002@gmail.com
         </a>
         .
-      </div>
+      </p>
     </Section>
   );
 }

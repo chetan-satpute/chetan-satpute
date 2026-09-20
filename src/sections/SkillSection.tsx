@@ -1,23 +1,34 @@
 import Section from '#components/Section.tsx';
 
-const skills = {
-  languages: ['TypeScript', 'JavaScript', 'Go'],
-  frontend: ['React', 'React Native'],
-  backend: ['Node.js', 'Go'],
-  devops: ['Google Cloud Platform', 'Docker', 'Linux'],
-};
+const skills = [
+  { label: 'Languages', items: ['TypeScript', 'JavaScript', 'Go'] },
+  { label: 'Frontend', items: ['React Native', 'React', 'Storybook'] },
+  { label: 'Backend', items: ['Node.js', 'PostgreSQL', 'Go'] },
+  { label: 'Tooling', items: ['Turborepo', 'pnpm', 'Vite', 'Webpack'] },
+  { label: 'DevOps', items: ['Docker', 'Google Cloud Platform', 'Cloudflare'] },
+];
 
 function SkillSection() {
   return (
-    <Section prompt="cat skills.yml">
-      <div className="text-sm leading-relaxed">
-        {Object.entries(skills).map(([category, items]) => (
-          <div key={category} className="mb-2 flex">
-            <span className="w-28 shrink-0 text-purple-400">{category}:</span>
-            <span className="text-neutral-300">[{items.join(', ')}]</span>
+    <Section
+      id="skills"
+      title="Skills"
+      description="Tools and technologies I reach for."
+    >
+      <dl className="space-y-5">
+        {skills.map((group) => (
+          <div
+            key={group.label}
+            className="grid gap-1 sm:grid-cols-[8rem_1fr] sm:items-baseline sm:gap-6"
+          >
+            <dt className="text-muted-foreground text-body">{group.label}</dt>
+
+            <dd className="font-code text-foreground text-body tracking-wide">
+              {group.items.join('  ·  ')}
+            </dd>
           </div>
         ))}
-      </div>
+      </dl>
     </Section>
   );
 }

@@ -1,49 +1,55 @@
-import { ExternalLink } from 'lucide-react';
-
 import Section from '#components/Section.tsx';
+
+const links = [
+  {
+    label: 'github.com/chetan-satpute',
+    href: 'https://github.com/chetan-satpute',
+  },
+  {
+    label: 'linkedin.com/in/chetansatpute',
+    href: 'https://www.linkedin.com/in/chetansatpute',
+  },
+  {
+    label: 'master.dev/u/chetansatpute',
+    href: 'https://master.dev/u/chetansatpute/',
+  },
+];
 
 function HeroSection() {
   return (
-    <Section prompt="whoami">
-      <h1 className="mb-3 text-3xl font-semibold tracking-tight text-neutral-100 md:text-4xl">
+    <Section id="top" className="pt-16 pb-10 md:pt-24 md:pb-14">
+      <p className="font-en-script text-accent text-title mb-1">Hello, I'm</p>
+
+      <h1 className="font-en-display text-foreground text-4xl tracking-[0.01em] md:text-5xl">
         Chetan Satpute
       </h1>
 
-      <p className="mb-6 text-sm font-semibold text-neutral-400">
-        Software Engineer
+      <p className="text-muted-foreground text-body mt-3">
+        Software Engineer · Pune, India
       </p>
 
-      <div className="mb-8 max-w-2xl leading-relaxed text-neutral-300">
-        <p className="mb-4">
-          Software Engineer passionate about building scalable web and mobile
-          applications, deploying them on the cloud, and continuously exploring
-          ways to improve performance, usability, and developer workflows.
-        </p>
+      <p className="text-foreground text-lead mt-7 max-w-2xl">
+        I build cross-platform products in React and React Native — and usually
+        the layer underneath them too: monorepos, shared component libraries,
+        build tooling. The bugs I enjoy most are the ones where the cause sits
+        in a different layer from the symptom.
+      </p>
 
-        <p className="mb-6 text-sm text-neutral-400">
-          React | React Native | TypeScript
-        </p>
-      </div>
-
-      <div className="flex flex-wrap items-center gap-6 text-sm text-neutral-400">
-        <a
-          href="https://www.linkedin.com/in/chetansatpute"
-          target="_blank"
-          rel="noreferrer"
-          className="flex items-center gap-2 transition-colors hover:text-blue-400"
-        >
-          linkedin <ExternalLink size={14} />
-        </a>
-
-        <a
-          href="https://github.com/chetan-satpute"
-          target="_blank"
-          rel="noreferrer"
-          className="flex items-center gap-2 transition-colors hover:text-blue-400"
-        >
-          github <ExternalLink size={14} />
-        </a>
-      </div>
+      <ul className="text-body mt-9 flex flex-wrap items-center gap-x-7 gap-y-2">
+        {links.map((link) => (
+          <li key={link.href}>
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              /* No icon, so the underline is what marks these as links. */
+              className="text-muted-foreground hover:text-accent decoration-border hover:decoration-accent/60 underline underline-offset-[5px] transition-colors"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
     </Section>
   );
 }

@@ -1,62 +1,124 @@
-import { ExternalLink } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
+import CodeCanvasHero from '#components/CodeCanvasHero.tsx';
 import Section from '#components/Section.tsx';
 
 const projects = [
   {
-    name: 'code-canvas',
+    name: 'Code Canvas',
     description:
-      'An interactive platform to explore and understand algorithms visually. Watch code come alive as you step through each line and see how data structures change in real time.',
-    tech: ['React', 'TypeScript', 'Async Generators', 'Redux'],
-    link: 'https://canvas.chetansatpute.dev',
+      'An interactive visualizer for data-structure algorithms that steps through execution the way a debugger does — the highlighted source line, the call stack, the variables in scope and the canvas all advance together, one step per click.',
+    highlights: [
+      '13 algorithms across arrays, linked lists, binary search trees and max heaps',
+      'A generator-driven engine with no React inside it, pulling one step at a time instead of precomputing the run',
+      'Code listings tokenized at build time, so the syntax highlighter ships no runtime bytes',
+    ],
+    tech: ['React 19', 'TypeScript', 'Generators', 'Canvas', 'Vite'],
+    site: 'https://canvas.chetansatpute.dev',
+    source: 'https://github.com/chetan-satpute/code-canvas',
     isLive: true,
+    preview: true,
   },
 ];
 
 function ProjectSection() {
   return (
-    <Section prompt="ls projects/">
-      <div className="space-y-4 text-sm text-neutral-300">
+    <Section
+      id="projects"
+      title="Projects"
+      description="Things I have built outside of client projects."
+    >
+      <div className="space-y-12">
         {projects.map((project) => (
-          <a
-            key={project.name}
-            href={project.isLive ? project.link : undefined}
-            target={project.isLive ? '_blank' : undefined}
-            rel={project.isLive ? 'noopener noreferrer' : undefined}
-            className="-ml-4 flex cursor-pointer flex-col gap-2 rounded-md p-4 transition-colors hover:bg-neutral-800"
-          >
-            {/* Row 1: Directory Name + Status */}
-            <div className="flex items-center justify-between text-neutral-100">
-              <span className="font-semibold text-blue-400">
-                {project.name}/
-              </span>
-              <span
-                className={`font-medium ${
-                  project.isLive ? 'text-green-400' : 'text-yellow-400'
-                }`}
+          <article key={project.name}>
+            <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
+              <h3>
+                <a
+                  href={project.site}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-en-display text-foreground hover:text-accent text-title transition-colors"
+                >
+                  {project.name}
+                </a>
+              </h3>
+
+              <a
+                href={project.site}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-success hover:text-success-hover group inline-flex items-center gap-1.5 transition-colors"
               >
-                [{project.isLive ? 'live' : 'in-progress'}]
-              </span>
+                canvas.chetansatpute.dev
+                <ArrowUpRight
+                  size={15}
+                  strokeWidth={1.75}
+                  className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </a>
             </div>
 
-            {/* Row 2: Description */}
-            <div className="mt-1 text-neutral-400">{project.description}</div>
+            <p className="text-muted-foreground text-body mt-5 max-w-2xl">
+              {project.description}
+            </p>
 
-            {/* Row 3: Tech Stack */}
-            <div className="mt-2 font-bold text-neutral-500">
-              {project.tech.join(' · ')}
+            <ul className="mt-5 space-y-2">
+              {project.highlights.map((highlight) => (
+                <li
+                  key={highlight}
+                  className="text-muted-foreground text-body flex max-w-2xl gap-3"
+                >
+                  <span
+                    aria-hidden
+                    className="bg-accent/60 mt-[0.5rem] h-1 w-1 shrink-0 rounded-full"
+                  />
+                  <span>{highlight}</span>
+                </li>
+              ))}
+            </ul>
+
+            <p className="font-code text-muted-foreground text-meta mt-5 tracking-wide">
+              {project.tech.join('  ·  ')}
+            </p>
+
+            <div className="text-body mt-5 flex flex-wrap items-center gap-x-7 gap-y-2">
+              {project.isLive && (
+                <a
+                  href={project.site}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:text-accent-hover group inline-flex items-center gap-1.5 transition-colors"
+                >
+                  Visit app
+                  <ArrowUpRight
+                    size={15}
+                    strokeWidth={1.75}
+                    className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                </a>
+              )}
+
+              <a
+                href={project.source}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent-hover group inline-flex items-center gap-1.5 transition-colors"
+              >
+                Source
+                <ArrowUpRight
+                  size={15}
+                  strokeWidth={1.75}
+                  className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </a>
             </div>
 
-            {/* Row 4: Action */}
-            {project.isLive && (
-              <div className="mt-2 flex items-center gap-2 text-xs text-blue-400">
-                <span className="underline underline-offset-2 select-text">
-                  {project.link}
-                </span>
-                <ExternalLink size={14} />
+            {project.preview && (
+              <div className="mt-8">
+                <CodeCanvasHero />
               </div>
             )}
-          </a>
+          </article>
         ))}
       </div>
     </Section>

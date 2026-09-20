@@ -1,17 +1,35 @@
+const navigation = [
+  { label: 'Work', href: '#work' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Contact', href: '#contact' },
+];
+
 function Header() {
   return (
-    <header className="border-b border-neutral-700">
-      <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4 text-sm">
-        {/* Left */}
-        <span className="text-neutral-100">~/chetan</span>
-
-        {/* Right */}
+    <header className="border-border bg-background/60 sticky top-0 z-10 border-b backdrop-blur-md">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4 lg:px-10">
         <a
-          href="mailto:chetan.satpute2002@gmail.com"
-          className="text-blue-400 transition-colors select-text hover:text-blue-300"
+          href="#top"
+          className="font-en-display text-foreground hover:text-accent text-meta tracking-[0.08em] transition-colors"
         >
-          chetan.satpute2002@gmail.com
+          Chetan Satpute
         </a>
+
+        <nav className="hidden sm:block">
+          <ul className="flex items-center gap-2">
+            {navigation.map((item) => (
+              <li key={item.href}>
+                <a
+                  href={item.href}
+                  className="text-muted-foreground hover:bg-surface-2/70 hover:text-foreground text-meta rounded-full px-3 py-1.5 transition-colors"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </header>
   );

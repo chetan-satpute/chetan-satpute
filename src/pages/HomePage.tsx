@@ -8,15 +8,23 @@ import SkillSection from '#sections/SkillSection.tsx';
 
 function HomePage() {
   return (
-    <div className="h-screen w-screen">
+    /* No overflow clipping here — it would turn this into a scroll container
+       and break the header's sticky positioning. */
+    <div className="relative min-h-screen w-full">
+      <div
+        aria-hidden
+        className="page-glow pointer-events-none absolute inset-x-0 top-0 h-[42rem]"
+      />
+
       <Header />
-      <div className="divide-y divide-neutral-800">
+
+      <main className="relative">
         <HeroSection />
         <ProjectSection />
         <ExperienceSection />
         <SkillSection />
         <ContactSection />
-      </div>
+      </main>
 
       <Footer />
     </div>
