@@ -5,6 +5,7 @@
 I enjoy building systems that turn complex workflows into simple, usable tools.
 
 #### Recent Work
+
 - Building production React Native and React applications from scratch
 - Creating developer tooling and automation (CLI tools, Chrome extensions)
 - Designing shared component systems and monorepo setups
