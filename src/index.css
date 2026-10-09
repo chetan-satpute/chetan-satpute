@@ -500,6 +500,27 @@
   --font-mono: var(--font-code);
 }
 
+/* The page's motion: one entrance (a short fade and rise on first load) and
+   the ambient backdrop's slow drift. Both are applied through motion-safe:,
+   so they are skipped under prefers-reduced-motion. */
+@theme {
+  --animate-enter: enter 700ms ease-out both;
+  --animate-drift: drift 40s ease-in-out infinite alternate;
+
+  @keyframes enter {
+    from {
+      opacity: 0;
+      transform: translateY(0.5rem);
+    }
+  }
+
+  @keyframes drift {
+    to {
+      transform: translate3d(-4%, 3%, 0) scale(1.06);
+    }
+  }
+}
+
 /* ---------- Scrollbars — driven by the --scrollbar-* tokens in :root ---------- */
 
 @layer base {
@@ -510,7 +531,25 @@
   }
 
   body {
-    @apply bg-background;
+    @apply bg-background text-foreground font-en antialiased;
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+  }
+
+  /* One focus treatment for every link, matching Code Canvas's ring: the
+     ring colour at 45%, offset from the element. */
+  a:focus-visible {
+    outline: 3px solid color-mix(in oklab, var(--ring) 45%, transparent);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 
   /* Firefox, and any browser without the WebKit pseudo-elements.
@@ -604,6 +643,35 @@
   }
 }
 
+/* The page's ambient light: washes of the primary, secondary and accent
+   colours pooled off-centre in the corners, so no one element on the page is
+   lit more than the rest. Mixed from the semantic tokens, so it follows the
+   theme. Apply it to a fixed, -z-10 element inside an `isolate` root: fixed
+   keeps it with the viewport while the content scrolls over it, and the inset
+   overshoots the viewport so the drift animation never reveals an edge. */
+@utility ambient-backdrop {
+  position: fixed;
+  inset: -10%;
+  z-index: -10;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      60rem 42rem at 88% 0%,
+      color-mix(in oklab, var(--primary) 48%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      52rem 40rem at 0% 45%,
+      color-mix(in oklab, var(--secondary) 36%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      44rem 30rem at 75% 100%,
+      color-mix(in oklab, var(--accent) 14%, transparent),
+      transparent 70%
+    );
+}
+
 /*
  * Dark-mode-first: there's no light/dark split above, the primitives
  * themselves define one deliberate dark palette. To add a light mode
@@ -627,4 +695,3 @@
  * (Google Fonts' `text=` param, or `pyftsubset`/`glyphhanger` for
  * self-hosted files) rather than dropping a language's font wholesale.
  */
-
