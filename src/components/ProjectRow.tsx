@@ -47,9 +47,7 @@ function ProjectRow(props: ProjectRowProps) {
         </div>
       )}
 
-      {/* empty:hidden drops the margin when the aside renders nothing, as the
-          live preview does below md. */}
-      {aside && <div className="mt-8 empty:hidden">{aside}</div>}
+      {aside && <div className="mt-8">{aside}</div>}
     </li>
   );
 }
