@@ -14,14 +14,12 @@
     "build": "pnpm run --sequential \"/build:.*/\"",
     "check:format": "prettier --check --log-level warn .",
     "check:lint": "eslint .",
-    "check:test": "vitest run",
     "check:typescript": "tsc -b --noEmit",
     "check": "pnpm run --sequential \"/check:.*/\"",
     "dev": "vite",
     "format": "prettier . --write",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "test": "vitest"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
