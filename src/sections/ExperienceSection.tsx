@@ -1,6 +1,7 @@
 import BoldTerms from '#components/BoldTerms.tsx';
 import Period from '#components/Period.tsx';
 import Section from '#components/Section.tsx';
+import TagList from '#components/TagList.tsx';
 import { experience } from '#content.ts';
 
 // Companies and their roles are newest first, so the career starts at the
@@ -76,6 +77,12 @@ function ExperienceSection() {
                         </li>
                       ))}
                     </ul>
+
+                    {role.tags && (
+                      <div className="mt-5">
+                        <TagList tags={role.tags} label="Technologies" />
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
