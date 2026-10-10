@@ -1,11 +1,17 @@
 import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 
 import App from './App.tsx';
 import './index.css';
 
-createRoot(document.getElementById('root')!).render(
+const container = document.getElementById('root')!;
+
+const app = (
   <StrictMode>
     <App />
-  </StrictMode>,
+  </StrictMode>
 );
+
+// Only the build prerenders the page; the dev server serves an empty root.
+if (import.meta.env.DEV) createRoot(container).render(app);
+else hydrateRoot(container, app);
