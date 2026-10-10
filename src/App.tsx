@@ -1,5 +1,4 @@
 import ContactSection from '#sections/ContactSection.tsx';
-import ExperienceSection from '#sections/ExperienceSection.tsx';
 import HeroSection from '#sections/HeroSection.tsx';
 import ProjectsSection from '#sections/ProjectsSection.tsx';
 import SiteFooter from '#sections/SiteFooter.tsx';
@@ -18,7 +17,6 @@ function App() {
 
       <main className="motion-safe:animate-enter flex-1">
         <HeroSection />
-        <ExperienceSection />
         <ProjectsSection />
         <ContactSection />
       </main>

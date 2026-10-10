@@ -2,7 +2,6 @@ import TextLink from '#components/TextLink.tsx';
 import { github, profile } from '#content.ts';
 
 const navItems = [
-  { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
   { label: 'Contact', href: '#contact' },
 ];

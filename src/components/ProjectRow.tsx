@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
 
-import TagList from '#components/TagList.tsx';
 import TextLink from '#components/TextLink.tsx';
 import type { Project } from '#content.ts';
 
@@ -40,12 +39,6 @@ function ProjectRow(props: ProjectRowProps) {
       <p className="font-en text-muted-foreground mt-1.5 leading-relaxed">
         {project.line}
       </p>
-
-      {project.tags && (
-        <div className="mt-3">
-          <TagList tags={project.tags} label="Technologies" />
-        </div>
-      )}
 
       {aside && <div className="mt-8">{aside}</div>}
     </li>

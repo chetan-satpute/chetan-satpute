@@ -1,6 +1,6 @@
 import HeroAvatar from '#components/HeroAvatar.tsx';
 import TextLink from '#components/TextLink.tsx';
-import { links, profile, stats } from '#content.ts';
+import { links, profile } from '#content.ts';
 import { displayUrl } from '#utils/url.ts';
 
 function HeroSection() {
@@ -43,24 +43,6 @@ function HeroSection() {
           </ul>
         </div>
       </div>
-
-      {/* Cell borders rather than divide-*: the grid wraps from four columns
-          to two, and dividers would not follow the wrap. */}
-      <dl className="lit-surface relative mt-12 grid grid-cols-2 overflow-hidden rounded-2xl sm:mt-14 sm:grid-cols-4">
-        {stats.map((stat) => (
-          <div
-            key={stat.label}
-            className="border-border flex flex-col-reverse justify-end gap-1.5 p-5 even:border-l max-sm:nth-[n+3]:border-t sm:p-6 sm:not-first:border-l"
-          >
-            <dt className="font-en text-muted-foreground text-sm leading-snug">
-              {stat.label}
-            </dt>
-            <dd className="font-en-display text-accent text-3xl font-semibold lining-nums">
-              {stat.value}
-            </dd>
-          </div>
-        ))}
-      </dl>
     </section>
   );
 }
