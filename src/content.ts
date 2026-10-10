@@ -182,7 +182,7 @@ export const skills: Skill[] = [
 export const projects: Project[] = [
   {
     title: 'Code Canvas',
-    line: 'An interactive algorithm visualizer that steps through code like a debugger: the highlighted line, the call stack and the data structure move together.',
+    line: 'Steps through algorithms line by line, running real code against a structure you shape. Each step highlights the line being run, shows every variable in memory, and draws the structure as the code touches it.',
     tags: ['TypeScript', 'React', 'Canvas'],
     links: [
       {
