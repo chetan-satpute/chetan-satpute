@@ -18,7 +18,6 @@ function ProjectsSection() {
           <ProjectRow
             key={project.title}
             project={project}
-            level={3}
             aside={previews[project.title]}
           />
         ))}

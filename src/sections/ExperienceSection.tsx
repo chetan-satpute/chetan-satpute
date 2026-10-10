@@ -1,5 +1,5 @@
+import BoldTerms from '#components/BoldTerms.tsx';
 import Period from '#components/Period.tsx';
-import ProjectRow from '#components/ProjectRow.tsx';
 import Section from '#components/Section.tsx';
 import { experience } from '#content.ts';
 
@@ -50,13 +50,13 @@ function ExperienceSection() {
                 )}
               </header>
 
-              <div className="space-y-16">
+              <div className="space-y-12">
                 {company.roles.map((role) => (
                   <div key={role.start.iso}>
-                    {/* Larger than the project titles and in the accent, so a change
-                        of role reads as a new heading over its projects. On
-                        phones the dates always sit below the title, rather
-                        than beside it only when the title happens to fit. */}
+                    {/* In the accent, so a change of role reads as a new
+                        heading over its points. On phones the dates always
+                        sit below the title, rather than beside it only when
+                        the title happens to fit. */}
                     <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between sm:gap-x-4">
                       <h4 className="font-en-display text-accent text-xl font-semibold">
                         {role.title}
@@ -69,13 +69,11 @@ function ExperienceSection() {
                       />
                     </div>
 
-                    <ul className="mt-6 space-y-8">
-                      {role.projects.map((project) => (
-                        <ProjectRow
-                          key={project.title}
-                          project={project}
-                          level={5}
-                        />
+                    <ul className="font-en text-muted-foreground marker:text-accent mt-4 list-disc space-y-3 pl-5 leading-relaxed">
+                      {role.points.map((point) => (
+                        <li key={point}>
+                          <BoldTerms text={point} />
+                        </li>
                       ))}
                     </ul>
                   </div>

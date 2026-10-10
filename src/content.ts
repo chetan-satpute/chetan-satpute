@@ -16,7 +16,8 @@ export type Role = {
   start: MonthYear;
   /** Absent while the role is current. */
   end?: MonthYear;
-  projects: Project[];
+  /** Résumé bullets; `**term**` renders the term in bold. */
+  points: string[];
 };
 
 export type Experience = {
@@ -71,24 +72,11 @@ export const experience: [Experience, ...Experience[]] = [
       {
         title: 'Software Engineer',
         start: { iso: '2026-06', label: 'Jun 2026' },
-        projects: [
-          {
-            title: 'Frontend SME',
-            line: 'Reviews pull requests on the main React frontend, for my team and the other teams that build on it.',
-          },
-          {
-            title: 'Email editor rebuild',
-            line: "Showed a Webpack 4 to Vite migration was unreliable, set the rebuild's foundations, and built its drag-and-drop and panel rendering.",
-          },
-          {
-            title: 'Mobile app',
-            line: 'Built the React Native app for property agents, from setup to production, inside a Turborepo monorepo with its own UI library.',
-            highlight: '~3 months to production',
-          },
-          {
-            title: 'Canva integration',
-            line: 'Lets agents browse Canva folders and batch-import designs straight into the platform.',
-          },
+        points: [
+          '**Frontend SME** for the main React frontend, reviewing pull requests for my team and the other teams that build on it.',
+          'Pitched a **from-scratch rebuild** of the email editor as more reliable than a **Webpack 4 → Vite** migration, then set its foundations and built drag-and-drop, reusing only the panel renderer.',
+          'Built the **React Native** app for property agents from setup to production in **~3 months**, inside a Turborepo monorepo with its own UI library.',
+          'Evaluated and proposed **Unistyles** for runtime theming on **design tokens** agreed with the design team, and introduced **Detox** end-to-end testing.',
         ],
       },
     ],
@@ -100,45 +88,19 @@ export const experience: [Experience, ...Experience[]] = [
         title: 'Software Engineer',
         start: { iso: '2023-07', label: 'Jul 2023' },
         end: { iso: '2026-05', label: 'May 2026' },
-        projects: [
-          {
-            title: 'Recruitment automation',
-            line: 'Chrome extension and Node.js scoring service with OpenAI-based analysis, replacing manual first-round review.',
-            highlight: '15–20 profiles in 5–10 s',
-          },
-          {
-            title: 'Hospital appointment booking',
-            line: 'React app with cross-timezone scheduling and calendar views for front-desk staff.',
-          },
-          {
-            title: 'Squash analytics app',
-            line: 'React Native app charting match and performance metrics, shipped to the App Store and Play Store.',
-            highlight: '~3 months to both stores',
-          },
-          {
-            title: 'Sports-tech platform',
-            line: 'Dockerized the Rails app behind a CLI helper, and fixed missing releases by adding CDN cache invalidation.',
-          },
-          {
-            title: 'Shared component library',
-            line: 'Moved production UI components into a shared library without breaking existing flows.',
-          },
-          {
-            title: 'Training and talks',
-            line: 'Trained 10–15 engineers in Git, JavaScript, TypeScript and bundlers, trained 5–10 in React Native, and gave a talk on Git internals.',
-          },
+        points: [
+          'Built **recruitment automation**, a Chrome extension and Node.js service using OpenAI, scoring **15–20 profiles in 5–10 s**.',
+          'Shipped a **React Native** squash analytics app to both stores in **~3 months**.',
+          "**Dockerized** Rails applications behind a CLI helper, and **debugged** releases that weren't reaching users, tracing and fixing missing **CDN cache invalidation**.",
+          'Trained **10–15 engineers** in Git, TypeScript and web bundlers, and gave a talk on **Git internals**.',
         ],
       },
       {
         title: 'Software Engineer Intern',
         start: { iso: '2023-01', label: 'Jan 2023' },
         end: { iso: '2023-06', label: 'Jun 2023' },
-        projects: [
-          {
-            title: 'Company intranet app',
-            line: 'React Native app taken to both stores in about three months, with OTP, Google and Apple sign-in.',
-            highlight: '150+ employees',
-          },
+        points: [
+          'Built the company intranet app in **React Native** from scratch, shipping it to both stores in ~3 months for **150+ employees**.',
         ],
       },
     ],
