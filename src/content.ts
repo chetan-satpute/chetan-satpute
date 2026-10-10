@@ -24,8 +24,6 @@ export type Role = {
 
 export type Experience = {
   company: string;
-  /** The previous company in this list, when the move was a transfer of employment. */
-  transferredFrom?: string;
   /** Newest first. */
   roles: [Role, ...Role[]];
 };
@@ -67,14 +65,13 @@ export const links: Link[] = [github, linkedin, masterDev];
 export const experience: [Experience, ...Experience[]] = [
   {
     company: 'MoxiWorks',
-    transferredFrom: 'Josh Software',
     roles: [
       {
         title: 'Software Engineer',
         start: { iso: '2026-06', label: 'Jun 2026' },
         points: [
           '**Frontend SME** for the main React frontend, reviewing pull requests for my team and the other teams that build on it.',
-          'Pitched a **from-scratch rebuild** of the email editor as more reliable than a **Webpack 4 → Vite** migration, then, working with Claude, set its foundations and built drag-and-drop, reusing only the panel renderer.',
+          'Pitched a **from-scratch rebuild** of the email editor as more reliable than a bundler migration, then, working with Claude, set its foundations and built drag-and-drop, reusing only the panel renderer.',
           'Built the React Native app for property agents **from setup to production in ~3 months**, inside a Turborepo monorepo with its own UI library.',
           'Evaluated and proposed Unistyles for **runtime theming on design tokens** agreed with the design team, and introduced Detox end-to-end testing.',
         ],
@@ -99,8 +96,8 @@ export const experience: [Experience, ...Experience[]] = [
         end: { iso: '2026-05', label: 'May 2026' },
         points: [
           'Built recruitment automation, a Chrome extension and Node.js service using OpenAI, scoring **15–20 profiles in 5–10 s**.',
-          'Shipped a React Native squash analytics app to both stores in **~3 months**.',
-          "Dockerized Rails applications behind a CLI helper, and debugged releases that weren't reaching users, tracing and fixing missing **CDN cache invalidation**.",
+          'Shipped a React Native sports analytics app to both stores in **~3 months**.',
+          'Dockerized Rails applications behind a CLI helper, and traced and fixed missing **CDN cache invalidation** in the release process.',
           'Trained **10–15 engineers** in Git, TypeScript and web bundlers, and gave a talk on Git internals.',
         ],
         tags: [

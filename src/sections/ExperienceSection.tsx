@@ -40,15 +40,6 @@ function ExperienceSection() {
                   end={end}
                   className="font-code text-accent mt-1 text-sm"
                 />
-
-                {company.transferredFrom && (
-                  <p className="font-en border-accent text-muted-foreground mt-4 border-l-2 pl-3 text-sm leading-relaxed">
-                    <span className="text-foreground block font-semibold">
-                      Transfer of employment
-                    </span>
-                    from {company.transferredFrom}
-                  </p>
-                )}
               </header>
 
               <div className="space-y-12">
