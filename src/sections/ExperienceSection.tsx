@@ -40,9 +40,12 @@ function ExperienceSection() {
                   className="font-code text-accent mt-1 text-sm"
                 />
 
-                {company.note && (
-                  <p className="font-en text-muted-foreground mt-2 text-sm leading-relaxed">
-                    {company.note}
+                {company.transferredFrom && (
+                  <p className="font-en border-accent text-muted-foreground mt-4 border-l-2 pl-3 text-sm leading-relaxed">
+                    <span className="text-foreground block font-semibold">
+                      Transfer of employment
+                    </span>
+                    from {company.transferredFrom}
                   </p>
                 )}
               </header>

@@ -21,7 +21,8 @@ export type Role = {
 
 export type Experience = {
   company: string;
-  note?: string;
+  /** The previous company in this list, when the move was a transfer of employment. */
+  transferredFrom?: string;
   /** Newest first. */
   roles: [Role, ...Role[]];
 };
@@ -65,7 +66,7 @@ export const links: Link[] = [github, linkedin, masterDev];
 export const experience: [Experience, ...Experience[]] = [
   {
     company: 'MoxiWorks',
-    note: 'Joined through a transfer of employment from Josh Software.',
+    transferredFrom: 'Josh Software',
     roles: [
       {
         title: 'Software Engineer',
@@ -94,7 +95,6 @@ export const experience: [Experience, ...Experience[]] = [
   },
   {
     company: 'Josh Software',
-    note: 'Five client projects, described by domain only.',
     roles: [
       {
         title: 'Software Engineer',
